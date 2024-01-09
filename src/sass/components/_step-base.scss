@@ -1,0 +1,21 @@
+@use "../abstracts/" as *;
+
+.step {
+  transform: translateY(-8rem);
+  width: 90%;
+  margin-inline: auto;
+  background-color: $neutral-100;
+  box-shadow: $box-shadow-card;
+  border-radius: 1rem;
+  // desktop
+  @include mq(small) {
+    width: 65rem;
+    transform: translate(0);
+    border-radius: 0;
+    margin-inline: unset;
+    box-shadow: unset;
+  }
+  //border: 1px solid black;
+}
+
+

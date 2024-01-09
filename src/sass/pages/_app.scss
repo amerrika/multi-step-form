@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+#app {
+  background-color: $neutral-100;
+  border-radius: 1.5rem;
+  box-shadow: $box-shadow-1;
+
+  display: flex;
+  flex-direction: column;
+
+  @include mq(small) {
+    padding: 2rem;
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+}

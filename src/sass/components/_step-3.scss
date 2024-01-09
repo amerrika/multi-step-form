@@ -1,0 +1,43 @@
+@use "../abstracts/" as *;
+
+.addons {
+  display: grid;
+  gap: 1.5rem;
+}
+.addon {
+  border: 1px solid $neutral-500;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+
+  &__heading {
+    flex-grow: 2;
+  }
+
+  input {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    outline: none;
+
+    &:focus,
+    &:focus-visible {
+      outline: 2px solid $project-blue-900;
+      outline-offset: 2px;
+    }
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+  }
+
+  &:hover {
+    border-color: $project-blue-900;
+  }
+
+  &.selected {
+    border-color: $project-blue-900;
+    background-color: $project-blue-100;
+  }
+}

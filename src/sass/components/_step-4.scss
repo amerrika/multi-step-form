@@ -1,0 +1,36 @@
+@use "../abstracts/" as *;
+
+.summary {
+  background-color: $project-blue-100;
+  border-radius: 1rem;
+
+  &__plan,
+  &__addon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__plan {
+    padding-block-end: 2rem;
+    border-bottom: 1px solid $neutral-400;
+  }
+
+  &__addons {
+    padding-block-start: 2rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  button {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+}
+
+.total {
+  padding: 4rem;
+  display: flex;
+  justify-content: space-between;
+}

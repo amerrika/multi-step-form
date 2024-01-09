@@ -1,0 +1,74 @@
+@use "../abstracts/" as *;
+
+.progress {
+  &-bar {
+    background: url("@/assets/images/bg-sidebar-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 172px;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    
+
+    // desktop
+    @include mq(small) {
+      border-radius: 1rem;
+      height: 568px;
+      width: 274px;
+      padding: 2rem;
+      background: url("@/assets/images/bg-sidebar-desktop.svg");
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+
+  &-step {
+    margin-block-start: 2.5rem;
+
+    // desktop
+    @include mq(small) {
+      margin-block-start: unset;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    &__icon {
+      background: transparent;
+      border: 1px solid $neutral-100;
+      color: $neutral-100;
+      font-size: 1.6rem;
+      font-weight: $fw-700;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 5rem;
+      display: grid;
+      place-content: center;
+      &.current {
+        color: $neutral-900;
+        background-color: $project-blue-200;
+        border-color: $project-blue-200;
+      }
+    }
+
+    &__info {
+      // in mobile version only icons are displayed
+      display: none;
+      @include mq(small) {
+        display: block;
+        color: $neutral-100;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        & > p:first-child {
+          font-size: 1.4rem;
+          opacity: 0.85;
+        }
+        & > p:last-child {
+          font-size: 1.5rem;
+          font-weight: $fw-700;
+        }
+      }
+    }
+  }
+}
