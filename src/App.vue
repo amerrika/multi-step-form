@@ -8,10 +8,10 @@
     <Step4 v-if="currentStep === 4" :billing="billing" :plan="plan" :addons="addons" :billingShort="billingShort" />
     <Step5 v-if="currentStep === 5" />
     <!-- Buttons -->
-    <div class="buttons-holder p-100" v-if="currentStep !== 1">
-      <button class=" button" data-style="muted" v-if="currentStep !== 1 && currentStep < 5" @click="currentStep--">Go
+    <div class="buttons-holder p-100" v-if="currentStep !== 1 && currentStep < 5">
+      <button class=" button" data-style="muted" @click="currentStep--">Go
         Back</button>
-      <button class="button" data-style="primary" v-if="currentStep !== 1 && currentStep < 5" @click="handleButtonNext">Next
+      <button class="button" data-style="primary" @click="handleButtonNext">Next
         Step</button>
     </div>
   </div>
