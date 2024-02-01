@@ -6,7 +6,7 @@
     <Step2 v-if="currentStep === 2" :billing="billing" @switch="updateBilling" @plan="updatePlan" />
     <Step3 v-if="currentStep === 3" :billing="billing" @addons="updateAddons" />
     <Step4 v-if="currentStep === 4" :billing="billing" :plan="plan" :addons="addons" :billingShort="billingShort" />
-    <Confirmation v-if="currentStep === 5" />
+    <Step5 v-if="currentStep === 5" />
     <!-- Buttons -->
     <div class="buttons-holder p-100" v-if="currentStep !== 1">
       <button class=" button" data-style="muted" v-if="currentStep !== 1 && currentStep < 5" @click="currentStep--">Go
@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import "../src/sass/main.scss"
+import "../src/sass/main.scss";
 import Progress from "./components/Progress.vue";
 import Step1 from "./components/Step1.vue";
 import Step2 from "./components/Step2.vue";
 import Step3 from "./components/Step3.vue";
 import Step4 from "./components/Step4.vue";
-import Confirmation from "./components/Confirmation.vue";
-import Modal from "./components/Modal.vue"
+import Step5 from "./components/Step5.vue";
+import Modal from "./components/Modal.vue";
 
 export default {
   name: 'App',
@@ -35,7 +35,7 @@ export default {
     Step2,
     Step3,
     Step4,
-    Confirmation,
+    Step5,
     Modal,
   },
   data() {
