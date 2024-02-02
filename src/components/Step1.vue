@@ -38,7 +38,6 @@ export default {
     components: {
         StepBase,
     },
-    props: ["currentStep"],
     data() {
         return {
             // input fields
