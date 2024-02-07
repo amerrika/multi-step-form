@@ -34,10 +34,12 @@
 
 <script>
 import StepBase from "./StepBase.vue";
+
 export default {
     components: {
         StepBase,
     },
+    emits: ["validate"],
     data() {
         return {
             // input fields

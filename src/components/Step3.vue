@@ -1,7 +1,7 @@
 <template>
     <StepBase title="Pick add-ons" subtitle="Add-ons help enhance your gaming experience">
         <ul class="addons">
-            <li class="addon" v-for="addon in addons" :class="{ selected: addon.isChecked }">
+            <li class="addon" v-for="addon in store.addons" :class="{ selected: addon.isChecked }">
                 <input type="checkbox" @click="handleCheck(addon)">
                 <div class="addon__heading">
                     <h2 class="heading-3 mb-end-1">{{ addon.title }}</h2>
@@ -19,6 +19,8 @@
 
 <script>
 import StepBase from './StepBase.vue';
+import { store } from '@/store';
+
 export default {
     components: {
         StepBase
@@ -26,40 +28,13 @@ export default {
     props: ["billing"],
     data() {
         return {
-            addons: [
-                {
-                    title: "Online service",
-                    subtitle: "Access to multiplayer games",
-                    price: {
-                        mo: 1,
-                        yr: 10,
-                    },
-                    isChecked: false,
-                },
-                {
-                    title: "Larger storage",
-                    subtitle: "Extra 1TB of cloud save",
-                    price: {
-                        mo: 2,
-                        yr: 20,
-                    },
-                    isChecked: false,
-                },
-                {
-                    title: "Customizable profile",
-                    subtitle: "Custom theme on your profile",
-                    price: {
-                        mo: 2,
-                        yr: 20,
-                    },
-                    isChecked: false,
-                }
-            ],
+            store
         }
     },
+
     computed: {
         selectedAddons() {
-            return this.addons.filter(addon => addon.isChecked)
+            return this.store.addons.filter(addon => addon.isChecked)
         }
     },
     methods: {
